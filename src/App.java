@@ -11,8 +11,7 @@ import java.awt.GridLayout;
 public class App {
     public static void main(String[] args) throws Exception {
         Screen scr = new Screen();
-        scr.load();
-        scr.showDefault();
+        scr.setTela(scr.T1);
 
         scr.revalidate();
     }

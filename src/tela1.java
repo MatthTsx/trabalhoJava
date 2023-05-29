@@ -7,27 +7,25 @@ import javax.swing.JTextField;
 
 public class tela1 extends JPanel{
     Screen scrn;
+    Object[] buttons = {
+        "aaa", 
+    };
 
     public tela1(Screen Scrn){
         super();
         this.scrn = Scrn;
 
-        this.setPreferredSize(new Dimension(500, 200));
+        this.setPreferredSize(new Dimension(1080/2, 720));
         JLabel a = new JLabel("aaaa");
         a.setBounds(0, 0, 120, 20);
         this.add(a);
         this.setBackground(new Color(255,2,25));
-        this.setBounds(0, 0, 350, 300);
+
         this.scrn.revalidate();
     }
     
-    public void showww(){
-
-    }
     public void show(){
-        this.showww();
-        System.out.println(this);
-        this.scrn.add( this );
-        scrn.revalidate();
+        System.out.println("a");
+        this.scrn.setTela(this);
     }
 }
