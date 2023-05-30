@@ -1,11 +1,14 @@
 package telas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Insets;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 
 public class tela1 extends JPanel{
@@ -31,6 +34,12 @@ public class tela1 extends JPanel{
 
         for (String button : buttons) {
             JButton b = new JButton(button);
+            b.setPreferredSize(new Dimension(150, 50));
+            b.setBackground(new Color(0x2dce98));
+            b.setForeground(Color.white);
+            b.setMargin(new Insets(10,20,0,0));
+            b.setBorder(null);
+            b.setFont(new Font("Calibri", Font.PLAIN, 14));
             this.add(b);
         }
     }
