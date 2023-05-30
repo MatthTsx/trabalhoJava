@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
+import Buttons.actionsLis;
+
 
 public class tela1 extends JPanel{
     Screen scrn;
@@ -40,6 +42,7 @@ public class tela1 extends JPanel{
             b.setMargin(new Insets(10,20,0,0));
             b.setBorder(null);
             b.setFont(new Font("Calibri", Font.PLAIN, 14));
+            b.addActionListener(new actionsLis(this));
             this.add(b);
         }
     }
