@@ -39,6 +39,7 @@ public class Screen extends JFrame{
 
         this.telas = new ArrayList<>();
         this.telas.add(new tela1(this));
+        this.telas.add(new inserir(this));
         // this.addComponentListener(new ComponentAdapter() 
         // {  
         //         public void componentResized(ComponentEvent evt) {
@@ -49,10 +50,13 @@ public class Screen extends JFrame{
     }
 
     public void setTela(int index){
-        if(this.getComponentCount() > 0){
-            this.c.removeAll();;
+        if(index < telas.size()){
+            if(this.getComponentCount() > 0){
+                this.c.removeAll();
+            }
+            this.c.add(telas.get(index));
+            this.revalidate();
+            this.repaint();
         }
-        this.c.add(telas.get(index));
-        this.revalidate();
     }
 }
