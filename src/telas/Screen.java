@@ -37,6 +37,7 @@ public class Screen extends JFrame{
         this.telas = new ArrayList<>();
         this.telas.add(new tela1(this));
         this.telas.add(new inserir(this));
+        this.telas.add(new Consultar(this));
         // this.addComponentListener(new ComponentAdapter() 
         // {  
         //         public void componentResized(ComponentEvent evt) {
