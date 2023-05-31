@@ -1,5 +1,4 @@
 package telas;
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
@@ -12,7 +11,7 @@ import utils.Pessoa;
 
 public class Screen extends JFrame{
 
-    ArrayList<Pessoa> Pessoas;
+    public ArrayList<Pessoa> Pessoas;
     Container c = this.getContentPane();
     public ArrayList<JPanel> telas;
     GridBagLayout grid;

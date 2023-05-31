@@ -1,16 +1,11 @@
 package telas;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
-import javax.swing.JButton;
 import javax.swing.JPanel;
-
-import Buttons.actionsLis;
-import styles.ButtonStyle1;
+import telas.components.classes.ScrnChanger;
 
 
 public class tela1 extends JPanel{
@@ -37,16 +32,8 @@ public class tela1 extends JPanel{
         this.setLayout(grid);
 
         for (int i = 0; i < buttons.length; i++) {
-            JButton b = new JButton(buttons[i]);
-            b.setPreferredSize(new Dimension(100, 40));
-            b.setUI(new ButtonStyle1());
-            b.addActionListener(new actionsLis(this.scrn, i + 1));
-            // this.c.gridwidth = 2;
-            this.c.gridx = GridBagConstraints.RELATIVE;
-            // this.c.gridy = (int) Math.floor(i / 5);
-            this.c.weighty = 1;
             this.c.insets = new Insets(0, 15, 0, 15);
-            this.add(b, this.c);
+            this.add(new ScrnChanger(buttons[i], this.scrn, i + 1), this.c);
         }
     }
     

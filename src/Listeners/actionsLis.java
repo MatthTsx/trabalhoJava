@@ -1,4 +1,4 @@
-package Buttons;
+package Listeners;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,6 +17,5 @@ public class actionsLis implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         this.scrn.setTela(index);
-        System.out.println("aa");
     }
 }
