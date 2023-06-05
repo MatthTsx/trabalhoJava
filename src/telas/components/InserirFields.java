@@ -1,5 +1,6 @@
 package telas.components;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -16,7 +17,7 @@ import telas.inserir;
 import utils.Pessoa;
 
 public class InserirFields extends JPanel{
-    Object[] TextsFields = {"Código", "Nome", "Bairro", "Cidade", "Estado", "CPF"};
+    Object[] TextsFields = {"Código", "Nome", "CPF", "Cidade", "Estado", "Bairro"};
     inserir parent;
 
     public InserirFields(inserir parent){
@@ -24,7 +25,7 @@ public class InserirFields extends JPanel{
 
         this.setLayout(new GridLayout(7,1,0, 15));
 
-        this.setBackground(null);
+        this.setBackground(new Color(0, 0, 0, 0));
         for (int i = 0; i < TextsFields.length; i++) {
             JTextField t = new JTextField();
             t.setPreferredSize(new Dimension(250, 30));

@@ -1,11 +1,11 @@
 package utils;
 public class Pessoa {
-    Object Codigo;
-    Object Name;
-    Object Bairro;
-    Object Cidade;
-    Object Estado;
-    Object CPF;
+    public Object Codigo;
+    public Object Name;
+    public Object Bairro;
+    public Object Cidade;
+    public Object Estado;
+    public Object CPF;
 
 
     public void setValue(int index, Object value){
@@ -17,7 +17,7 @@ public class Pessoa {
                 this.Name = value;
                 break;
             case 2:
-                this.Bairro = value;
+                this.CPF = value;
                 break;
             case 3:
                 this.Cidade = value;
@@ -26,7 +26,7 @@ public class Pessoa {
                 this.Estado = value;
                 break;
             case 5:
-                this.CPF = value;
+                this.Bairro = value;
                 break;
         
             default:

@@ -6,6 +6,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+
+import styles.telaStyle1;
 import telas.components.InserirFields;
 import telas.components.classes.ScrnChanger;
 
@@ -33,6 +35,8 @@ public class inserir extends JPanel{
         this.add(new ScrnChanger("Voltar", this.scrn, 0), this.c);
         
         this.add(new InserirFields(this));
+
+        this.setUI(new telaStyle1());
     }
     
     public void show(int index){
