@@ -31,10 +31,12 @@ public class inserir extends JPanel{
         for (int i = 0; i < TextsFields.length; i++) {
             this.params.add(null);
         }
+        this.c.gridx = 0;
+        this.c.gridy = 0;
 
         this.add(new ScrnChanger("Voltar", this.scrn, 0), this.c);
-        
-        this.add(new InserirFields(this));
+        this.c.gridy = 1;
+        this.add(new InserirFields(this), this.c);
 
         this.setUI(new telaStyle1());
     }

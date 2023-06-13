@@ -2,11 +2,13 @@ package telas;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
+import java.awt.Panel;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import telas.interfaces.Panels;
 import utils.Pessoa;
 
 public class Screen extends JFrame{
@@ -15,10 +17,24 @@ public class Screen extends JFrame{
     Container c = this.getContentPane();
     public ArrayList<JPanel> telas;
     GridBagLayout grid;
+    public boolean DarkMode = false;
 
     public Screen(){
         
         this.Pessoas = new ArrayList<>();
+        Pessoa p = new Pessoa();
+        p.setValue(0, "12");
+        p.setValue(1, "12");
+        p.setValue(2, "12");
+        this.Pessoas.add(p);
+        
+        for (int i = 0; i < 50; i++) {
+            Pessoa p1 = new Pessoa();
+            p1.setValue(0, "wadsa");
+            p1.setValue(1, "aa");
+            p1.setValue(2, "");
+            this.Pessoas.add(p1);
+        }
         
         this.grid = new GridBagLayout();
         
@@ -38,6 +54,7 @@ public class Screen extends JFrame{
         this.telas.add(new tela1(this));
         this.telas.add(new inserir(this));
         this.telas.add(new Consultar(this));
+        this.telas.add(new Panels(this));
         // this.addComponentListener(new ComponentAdapter() 
         // {  
         //         public void componentResized(ComponentEvent evt) {

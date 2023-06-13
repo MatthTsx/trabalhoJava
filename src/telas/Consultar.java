@@ -1,41 +1,40 @@
 package telas;
 
-import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Listeners.btnFunc;
-import Listeners.btnFunc.funcInterface;
 import styles.telaStyle1;
 import telas.components.ConsultaContainer;
-import telas.components.classes.ScrnChanger;
+import telas.interfaces.Panels;
 
-public class Consultar extends JPanel{
+public class Consultar extends Panels{
     
-    Screen scrn;
     ConsultaContainer c;
+    GridBagConstraints con = new GridBagConstraints();
+    JPanel content;
 
     public Consultar(Screen scrn){
-        this.scrn = scrn;
-        this.setPreferredSize(new Dimension(1064, 680));
-        this.setBackground(new Color(255,2,25));
+        super(scrn);
+        this.content = new JPanel();
+        this.content.setLayout(new FlowLayout(FlowLayout.CENTER,2,0));
 
         this.c = new ConsultaContainer(1, scrn);
-        this.add(new JLabel("aaa"));
-        this.add(new ScrnChanger("Voltar", this.scrn, 0));
 
-        JButton btn = new JButton();
-        this.add(btn);
-        funcInterface func = () -> { c.Generate(); };
-        btn.addActionListener(new btnFunc(func));
-        this.add(c);
+        // JButton btn = new JButton("reload");
+        // this.content.add(btn, this.con);
+        // funcInterface func = () -> { c.Generate(); };
+        // btn.addActionListener(new btnFunc(func));
 
-        this.setUI(new telaStyle1());
+        this.content.add(c, this.con);
+        
+        this.content.setUI(new telaStyle1());
+        this.add(content, BorderLayout.EAST);
     }
-
+    
     public void _update(){
         c.Generate();
     }
