@@ -1,10 +1,13 @@
 package telas.components;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.util.stream.IntStream;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,22 +21,31 @@ public class ConsultaPessoa extends JPanel {
     Consultar parent;
 
     public ConsultaPessoa(Consultar parent){
-        this.setPreferredSize(new Dimension(1064 - 700, 10));
+        this.setPreferredSize(new Dimension(1064 - 705, 600));
         this.parent = parent;
-        this.setUI(new telaStyle1());
-        this.add(this.content);
+        this.setLayout(new BorderLayout());
+
+        this.content.setLayout(new GridBagLayout());
+        // this.content.setBackground(new Color(0,0,0,0)); //buga td
+
+        this.content.setPreferredSize(new Dimension(1064 - 702 -50, 40));
+        this.content.setOpaque(false);
+        this.content.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
+
+        // this.setUI(new telaStyle1());
+        this.add(this.content, BorderLayout.CENTER);
     }
 
 
     public void generate(){
         this.content.removeAll();
-        if(pessoa == null){
+        if(this.pessoa == null){
         }else{
-            this.content.add(new JLabel(pessoa.Name.toString()));
+            this.content.add(new JLabel(pessoa.Name != null ? pessoa.Name.toString() : pessoa.Codigo.toString()));
         }
 
-        this.content.repaint();
         this.content.revalidate();
+        this.content.repaint();
     }
 
     public void getNewPessoa(Object cod){
