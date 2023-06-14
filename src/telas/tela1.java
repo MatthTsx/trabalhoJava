@@ -13,9 +13,10 @@ import javax.swing.JPanel;
 
 import styles.telaStyle1;
 import telas.components.classes.ScrnChanger;
+import telas.interfaces.Panels;
 
 
-public class tela1 extends JPanel{
+public class tela1 extends Panels{
     Screen scrn;
     String[] buttons = {
         "inserir", "Consultar",
@@ -25,21 +26,23 @@ public class tela1 extends JPanel{
     GridBagConstraints c = new GridBagConstraints();
 
     public tela1(Screen Scrn){
-        super();
+        super(Scrn);
         this.scrn = Scrn;
+        JPanel p = new JPanel(); 
 
-        this.setPreferredSize(new Dimension(1064, 680));
-        this.setSize(this.scrn.getSize());
-        this.setBounds(this.scrn.getBounds());
-        this.setBackground(new Color(36, 6, 65));
-        this.setLayout(grid);
+        p.setPreferredSize(new Dimension(1064, 680));
+        p.setSize(this.scrn.getSize());
+        p.setBounds(this.scrn.getBounds());
+        p.setBackground(new Color(36, 6, 65));
+        p.setLayout(grid);
 
         for (int i = 0; i < buttons.length; i++) {
             this.c.insets = new Insets(0, 15, 0, 15);
-            this.add(new ScrnChanger(buttons[i], this.scrn, i + 1), this.c);
+            p.add(new ScrnChanger(buttons[i], this.scrn, i + 1), this.c);
         }
-
-        this.setUI(new telaStyle1());
+        
+        p.setUI(new telaStyle1());
+        this.add(p);
     }
     
     public void show(int index){

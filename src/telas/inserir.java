@@ -5,13 +5,15 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
+
 import javax.swing.JPanel;
 
 import styles.telaStyle1;
 import telas.components.InserirFields;
 import telas.components.classes.ScrnChanger;
+import telas.interfaces.Panels;
 
-public class inserir extends JPanel{
+public class inserir extends Panels{
     public Screen scrn;
     GridBagLayout grid = new GridBagLayout();
     GridBagConstraints c = new GridBagConstraints();
@@ -20,13 +22,15 @@ public class inserir extends JPanel{
     Object[] TextsFields = {"Código", "Nome", "Bairro", "Cidade", "Estado", "CPF"};
 
     public inserir(Screen Scrn){
-        super();
+        super(Scrn);
         this.scrn = Scrn;
-        this.setPreferredSize(new Dimension(1064, 680));
-        this.setSize(this.scrn.getSize());
-        this.setBounds(this.scrn.getBounds());
-        this.setBackground(new Color(255,2,25));
-        this.setLayout(grid);
+        JPanel p = new JPanel();
+
+        p.setPreferredSize(new Dimension(1064, 680));
+        p.setSize(this.scrn.getSize());
+        p.setBounds(this.scrn.getBounds());
+        p.setBackground(new Color(255,2,25));
+        p.setLayout(grid);
 
         for (int i = 0; i < TextsFields.length; i++) {
             this.params.add(null);
@@ -34,11 +38,11 @@ public class inserir extends JPanel{
         this.c.gridx = 0;
         this.c.gridy = 0;
 
-        this.add(new ScrnChanger("Voltar", this.scrn, 0), this.c);
-        this.c.gridy = 1;
-        this.add(new InserirFields(this), this.c);
+        p.add(new InserirFields(this), this.c);
 
-        this.setUI(new telaStyle1());
+        p.setUI(new telaStyle1());
+
+        this.add(p);
     }
     
     public void show(int index){

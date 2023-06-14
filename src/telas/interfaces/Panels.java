@@ -23,4 +23,6 @@ public class Panels extends JPanel{
         this.setBackground(mainColor);
         this.add(new Header(this.scrn), BorderLayout.NORTH);
     }
+
+    public void onLoad(){}
 }

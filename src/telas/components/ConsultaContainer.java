@@ -2,20 +2,11 @@ package telas.components;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-
-import Listeners.btnFunc;
+import telas.Consultar;
 import telas.Screen;
 import telas.components.classes.consultaFooter;
 import telas.components.classes.consultaHeader;
@@ -29,19 +20,21 @@ public class ConsultaContainer extends JPanel{
     public Screen scrn;
     consultaFooter footer;
     JPanel container = new JPanel(new GridLayout(13,1, 5, 0));
+    Consultar con;
 
-    public ConsultaContainer(int i, Screen scrn){
+    public ConsultaContainer(int i, Screen scrn, Consultar con){
         super();
         this.index_relative = i;
         this.scrn = scrn;
+        this.con = con;
         this.footer = new consultaFooter(this);
-        this.setBackground(new Color(255,255,255));
         this.setLayout(new BorderLayout());
+
+        this.container.setBackground(new Color(195, 141, 148));
 
         this.add(new consultaHeader(), BorderLayout.NORTH); 
         this.add(this.container);
         this.add(this.footer, BorderLayout.SOUTH);
-
         this.Generate();
     }
 
@@ -56,7 +49,7 @@ public class ConsultaContainer extends JPanel{
 
         for (int i = 0; i < ps.size(); i++) {
             Pessoa pessoa = ps.get(i);
-            this.container.add(new cunsultaFields(pessoa, i%2 == 0));
+            this.container.add(new cunsultaFields(pessoa, i%2 == 0, this.con));
         }
 
         this.container.revalidate();
@@ -68,4 +61,5 @@ public class ConsultaContainer extends JPanel{
         this.footer.generate();
         this.Generate();
     }
+
 }

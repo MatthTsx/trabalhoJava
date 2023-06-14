@@ -15,7 +15,7 @@ public class Screen extends JFrame{
 
     public ArrayList<Pessoa> Pessoas;
     Container c = this.getContentPane();
-    public ArrayList<JPanel> telas;
+    public ArrayList<Panels> telas;
     GridBagLayout grid;
     public boolean DarkMode = false;
 
@@ -25,7 +25,7 @@ public class Screen extends JFrame{
         
         for (int i = 0; i < 47; i++) {
             Pessoa p1 = new Pessoa();
-            p1.setValue(0, "wadsawdasdawdasdawdsadawdsawdsaawdsawdsa");
+            p1.setValue(0, "Codigo_" + (i + 1) );
             p1.setValue(1, (i + 1) + " aa");
             p1.setValue(2, "w");
             p1.setValue(3, "wadsa");
@@ -68,6 +68,7 @@ public class Screen extends JFrame{
                 this.c.removeAll();
             }
             this.c.add(telas.get(index));
+            telas.get(index).onLoad();
             this.revalidate();
             this.repaint();
         }

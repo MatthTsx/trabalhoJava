@@ -10,12 +10,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import Listeners.MouseClick;
+import telas.Consultar;
 import utils.Pessoa;
 
 public class cunsultaFields extends JPanel{
     
 
-    public cunsultaFields(Pessoa pessoa, boolean odd){
+    public cunsultaFields(Pessoa pessoa, boolean odd, Consultar con){
+        this.addMouseListener(new MouseClick(() -> {con.cp.getNewPessoa(pessoa.Codigo);}));
+
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         this.setPreferredSize(new Dimension(700, 41));
         //TODO: Mudar a cor
