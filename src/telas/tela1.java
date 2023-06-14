@@ -18,8 +18,8 @@ import telas.components.classes.ScrnChanger;
 public class tela1 extends JPanel{
     Screen scrn;
     String[] buttons = {
-        "inserir", "Consultar", "Excluir",
-        "Alterar", "Listar",
+        "inserir", "Consultar",
+        // "Excluir", "Alterar", "Listar",
     };
     GridBagLayout grid = new GridBagLayout();
     GridBagConstraints c = new GridBagConstraints();

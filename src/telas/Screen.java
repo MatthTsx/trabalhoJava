@@ -22,17 +22,15 @@ public class Screen extends JFrame{
     public Screen(){
         
         this.Pessoas = new ArrayList<>();
-        Pessoa p = new Pessoa();
-        p.setValue(0, "12");
-        p.setValue(1, "12");
-        p.setValue(2, "12");
-        this.Pessoas.add(p);
         
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 47; i++) {
             Pessoa p1 = new Pessoa();
-            p1.setValue(0, "wadsa");
-            p1.setValue(1, "aa");
-            p1.setValue(2, "");
+            p1.setValue(0, "wadsawdasdawdasdawdsadawdsawdsaawdsawdsa");
+            p1.setValue(1, (i + 1) + " aa");
+            p1.setValue(2, "w");
+            p1.setValue(3, "wadsa");
+            p1.setValue(4, "aa");
+            p1.setValue(5, "w");
             this.Pessoas.add(p1);
         }
         
