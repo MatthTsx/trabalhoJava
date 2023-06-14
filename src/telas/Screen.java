@@ -23,7 +23,7 @@ public class Screen extends JFrame{
         
         this.Pessoas = new ArrayList<>();
         
-        for (int i = 0; i < 47; i++) {
+        for (int i = 0; i < 50; i++) {
             Pessoa p1 = new Pessoa();
             p1.setValue(0, "Codigo_" + (i + 1) );
             p1.setValue(1, (i + 1) + " aa");
