@@ -25,12 +25,12 @@ public class Screen extends JFrame{
         
         for (int i = 0; i < 50; i++) {
             Pessoa p1 = new Pessoa();
-            p1.setValue(0, "Codigo_" + (i + 1) );
-            p1.setValue(1, (i + 1) + " aa");
-            p1.setValue(2, "w");
-            p1.setValue(3, "wadsa");
-            p1.setValue(4, "aa");
-            p1.setValue(5, "w");
+            p1.setValue(0, "Codigo " + (i + 1) );
+            p1.setValue(1, "Mateus Almeida");
+            p1.setValue(2, "57568110877");
+            p1.setValue(3, "Itatiba");
+            p1.setValue(4, "São Paulo");
+            p1.setValue(5, "Pq da Colina");
             this.Pessoas.add(p1);
         }
         

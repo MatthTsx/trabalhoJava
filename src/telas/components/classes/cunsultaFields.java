@@ -21,7 +21,7 @@ public class cunsultaFields extends JPanel{
         this.addMouseListener(new MouseClick(() -> {con.cp.getNewPessoa(pessoa.Codigo);}));
 
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-        this.setPreferredSize(new Dimension(700, 41));
+        this.setPreferredSize(new Dimension(700, 43));
         //TODO: Mudar a cor
         this.setBackground(odd ? new Color(241, 250, 238) : new Color(168, 218, 220));
         this.setAlignmentX(SwingConstants.CENTER);

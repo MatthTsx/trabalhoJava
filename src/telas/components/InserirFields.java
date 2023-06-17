@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -17,7 +19,7 @@ import telas.inserir;
 import utils.Pessoa;
 
 public class InserirFields extends JPanel{
-    Object[] TextsFields = {"Código", "Nome", "CPF", "Cidade", "Estado", "Bairro"};
+    Object[] TextsFields = {"Código", "Nome", "CPF (sem pontos e/ou traços)", "Cidade", "Estado", "Bairro"};
     inserir parent;
 
     public InserirFields(inserir parent){
@@ -29,6 +31,24 @@ public class InserirFields extends JPanel{
         for (int i = 0; i < TextsFields.length; i++) {
             JTextField t = new JTextField();
             t.setPreferredSize(new Dimension(250, 30));
+            t.setText(TextsFields[i].toString());
+            final int inderx = i;
+            t.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (t.getText().equals(TextsFields[inderx].toString())) {
+                    t.setText("");
+                    t.setForeground(Color.BLACK);
+                }
+            }
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (t.getText().isEmpty()) {
+                    t.setForeground(Color.GRAY);
+                    t.setText(TextsFields[inderx].toString());
+                }
+            }
+            });
             this.add(t);
             MyInterface a = (Object str, int index) -> { this.setValue(str, index); };
             t.getDocument().addDocumentListener(new textfieldLisOnChange(a, i));
@@ -48,12 +68,12 @@ public class InserirFields extends JPanel{
     }
 
     private void inserir_(){
-        if(this.parent.params.get(0) == null) { return; }
+        if(this.parent.params.get(0) == null || this.parent.params.get(0) == TextsFields[0]) { return; }
         Pessoa pes = new Pessoa();
         
         for (int i = 0; i < this.parent.params.size(); i++) {
             Object value = this.parent.params.get(i);
-            if(value != null){
+            if(value != null && value != TextsFields[i]){
                 pes.setValue(i, value);
             }
         }
