@@ -23,16 +23,14 @@ public class Screen extends JFrame{
         
         this.Pessoas = new ArrayList<>();
         
-        for (int i = 0; i < 50; i++) {
-            Pessoa p1 = new Pessoa();
-            p1.setValue(0, "Codigo " + (i + 1) );
-            p1.setValue(1, "Mateus Almeida");
-            p1.setValue(2, "57568110877");
-            p1.setValue(3, "Itatiba");
-            p1.setValue(4, "São Paulo");
-            p1.setValue(5, "Pq da Colina");
-            this.Pessoas.add(p1);
-        }
+        Pessoa p1 = new Pessoa();
+        p1.setValue(0, "placeholder");
+        p1.setValue(1, "placeholder");
+        p1.setValue(2, "placeholder");
+        p1.setValue(3, "placeholder");
+        p1.setValue(4, "placeholder");
+        p1.setValue(5, "placeholder");
+        this.Pessoas.add(p1);
         
         this.grid = new GridBagLayout();
         

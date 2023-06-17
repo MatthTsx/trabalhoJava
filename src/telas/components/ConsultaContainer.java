@@ -39,12 +39,12 @@ public class ConsultaContainer extends JPanel{
     }
 
     public void Generate(){
+        this.container.removeAll(); //se lembre disso seu jumento quadrado
         List<Pessoa> ps = new ArrayList<Pessoa>();
         if(this.index_relative > this.scrn.Pessoas.size()){ return; }
         int index_max = Math.min(this.index_relative * 13, this.scrn.Pessoas.size());
         ps = scrn.Pessoas.subList( (this.index_relative - 1) * 13, index_max);
         
-        this.container.removeAll(); //se lembre disso seu jumento quadrado
 
 
         for (int i = 0; i < ps.size(); i++) {

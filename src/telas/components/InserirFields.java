@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -21,6 +22,7 @@ import utils.Pessoa;
 public class InserirFields extends JPanel{
     Object[] TextsFields = {"Código", "Nome", "CPF (sem pontos e/ou traços)", "Cidade", "Estado", "Bairro"};
     inserir parent;
+    ArrayList<JTextField> tx = new ArrayList<>();
 
     public InserirFields(inserir parent){
         this.parent = parent;
@@ -52,6 +54,7 @@ public class InserirFields extends JPanel{
             this.add(t);
             MyInterface a = (Object str, int index) -> { this.setValue(str, index); };
             t.getDocument().addDocumentListener(new textfieldLisOnChange(a, i));
+            tx.add(t);
         }
 
         JButton b = new JButton("Inserir");
@@ -79,10 +82,14 @@ public class InserirFields extends JPanel{
         }
         this.parent.scrn.Pessoas.add(pes);
 
-        for (Component object : this.getComponents()) {
-            if(object instanceof JTextField){
-                ((JTextField) object).setText(null);
-            }
+        // for (Component object : this.getComponents()) {
+        //     if(object instanceof JTextField){
+        //         ((JTextField) object).setText(null);
+        //     }
+        // }
+
+        for (int i = 0; i < TextsFields.length; i++) {
+            tx.get(i).setText(TextsFields[i].toString());
         }
 
         this.parent.limparParams();
