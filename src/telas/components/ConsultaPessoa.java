@@ -7,15 +7,9 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
-import java.awt.TextField;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.util.stream.IntStream;
 
 import javax.swing.BorderFactory;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import styles.telaStyle1;
 import telas.Consultar;

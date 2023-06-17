@@ -17,8 +17,6 @@ import javax.swing.JTextField;
 import Listeners.btnFunc;
 import Listeners.textfieldLisOnChange;
 import Listeners.textfieldLisOnChange.MyInterface;
-import styles.ButtonStyle1;
-import telas.Consultar;
 import telas.Screen;
 import telas.components.ConsultaPessoa;
 import utils.Pessoa;

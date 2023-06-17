@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 
 import styles.telaStyle1;
 import telas.components.InserirFields;
-import telas.components.classes.ScrnChanger;
 import telas.interfaces.Panels;
 
 public class inserir extends Panels{
